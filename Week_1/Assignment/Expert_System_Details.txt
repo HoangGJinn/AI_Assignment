@@ -1,0 +1,35 @@
+My github: https://hoanggjinn.github.io/AI_Assignment
+Expert System
+1) Knowledge Base (Cơ sở tri thức)
+Khi hạn chót cực kỳ gấp (trong vòng 1 ngày):
+→ Hãy bắt tay vào làm ngay, không quan trọng bạn đang cảm thấy thế nào hay có bao nhiêu thời gian rảnh.
+
+Khi hạn chót khá gấp (trong 3 ngày tới):
+
+Nếu bạn có ít nhất 45 phút rảnh → Hãy bắt đầu ngay.
+
+Nếu ít hơn 45 phút → Hãy làm một phần nhỏ hoặc phác thảo ý tưởng trước.
+
+Khi hạn chót đang đến gần (trong 7 ngày):
+
+Nếu bạn đang có tâm trạng không tốt → Nghỉ ngơi một chút rồi quay lại làm.
+
+Nếu tâm trạng ổn và bạn có ít nhất 30 phút rảnh → Tranh thủ làm luôn.
+
+Nếu tâm trạng ổn nhưng thời gian rảnh ít hơn 30 phút → Hãy lập một kế hoạch ngắn.
+
+Khi hạn chót còn xa (hơn 7 ngày):
+
+Nếu tâm trạng tốt và có nhiều thời gian rảnh → Có thể khởi động nhẹ nhàng.
+
+Nếu tâm trạng không tốt nhưng vẫn có thời gian rảnh → Nghỉ ngắn một chút rồi bắt đầu nhẹ nhàng.
+
+Nếu thời gian quá ít → Tạm hoãn trong thời gian ngắn.
+
+2) Inference Engine (Cơ sở suy luận)
+
+Đầu vào: deadline (ngày), free_time (phút rảnh liên tục), mood (Tốt/Bình thường/Tệ).
+
+Xử lý: so khớp tuần tự các luật theo khoảng deadline → xét free_time → xét mood
+
+Đầu ra: quyết định + lời giải thích vì sao luật đó được kích hoạt.
