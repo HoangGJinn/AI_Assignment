@@ -23,24 +23,71 @@
     }
     .week-card {
       background: #2c2c2c;
-      border-radius: 10px;
-      padding: 20px;
-      width: 200px;
-      transition: transform 0.2s;
+      border-radius: 16px;
+      padding: 20px 16px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.25s ease, background 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
+    
     .week-card:hover {
-      transform: scale(1.05);
-      background: #333;
+      transform: translateY(-5px) scale(1.03);
+      background: #373737;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
     }
+    
+    .week-card h2 {
+      margin-top: 0;
+      margin-bottom: 12px;
+      font-size: 1.4em;
+      color: #4CAF50;
+    }
+    
+    .week-card a {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 8px 12px;
+      background: #4CAF50;
+      color: #fff;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    
+    .week-card a:hover {
+      background: #45a049;
+    }
+
     a {
       color: #4CAF50;
       text-decoration: none;
       font-weight: bold;
     }
+    .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+    .left{
+      text-align: left;
+    }
+    .center{
+      margin: 0 auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <h1>AI Assignments</h1>
+  <div class="header">
+    <p class="left">Nguyễn Hoàng Giáp - 23110096</p>
+    <h1 class="center">AI Assignments</h1>
+  </div>
+
   <div class="week-list" id="weekList"></div>
 
   <script>
