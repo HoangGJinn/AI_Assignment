@@ -95,8 +95,8 @@
 
     const weeks = [
       { name: "Week 1", path: "Week_1/Assignment" },
-      { name: "Week 2", path: "Week_2/Assignment" }
-      //{ name: "Week 3", path: "Week_3/Assignment" }
+      { name: "Week 2", path: "Week_2/Assignment" },
+      { name: "Week 3", path: "Week_3/Assignment" }
     ];
 
     const container = document.getElementById("weekList");
@@ -112,9 +112,55 @@
   </script>
 
   <h3>Overview</h3>
-  <textarea name="" id="" style="width: 1500px; height: 500px; background-color: aliceblue; font-size: larger;">
-      - Week1: Hệ chuyên gia (Cơ sở tri thức, cơ sở suy luận) và 5 bài tập python
-      - Week2: 50 câu bài tập numpy, UI game 8 puzzle và 8 con hậu, các ví dụ về PEAS là nền tảng để mô tả và đánh giá các tác nhân thông minh trong bối cảnh AI
+  <textarea readonly name="" id=""
+    style="
+      width: 100%;
+      max-width: 1500px;
+      height: 500px;
+      background-color: #f4faff;
+      font-size: 17px;
+      font-family: 'Segoe UI', sans-serif;
+      color: #222;
+      padding: 20px;
+      border: 3px solid #e67676;
+      border-radius: 10px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      line-height: 1.6;
+      resize: vertical;
+      outline: none;
+    "
+    onfocus="this.style.borderColor='#4682b4'; this.style.boxShadow='0 0 8px rgba(70,130,180,0.5)'"
+    onblur="this.style.borderColor='#b0c4de'; this.style.boxShadow='2px 2px 8px rgba(0,0,0,0.1)'"
+  >
+  • Week 1:
+    Hệ chuyên gia gồm hai thành phần:
+      - Cơ sở tri thức
+      - Cơ sở suy luận
+    5 bài tập Python giúp rèn luyện tư duy logic và kỹ thuật xử lý cơ bản.
+
+  • Week 2:
+    - 50 câu bài tập luyện tập NumPy (mảng, xử lý dữ liệu)
+    - Giao diện trò chơi 8 Puzzle và 8 quân hậu bằng Tkinter
+    - Giới thiệu mô hình PEAS để mô tả và đánh giá các tác nhân thông minh trong AI:
+        + P: Performance Measure (Đánh giá hiệu suất)
+        + E: Environment (Môi trường)
+        + A: Actuators (Bộ truyền động)
+        + S: Sensors (Cảm biến)
+
+  • Week 3:
+    - Mô phỏng đặt 8 quân hậu sao cho trùng với bàn cờ mẫu đã cho
+    - Sử dụng các thư viện:
+        + tkinter: thiết kế giao diện người dùng (GUI)
+        + queue: triển khai thuật toán BFS thay vì dùng đệ quy (Backtracking)
+    - Cấu trúc gồm 2 file:
+        + twelve_queen_solutions.py – chứa 12 mẫu bàn cờ thỏa điều kiện
+        + ChessGame_Full.py – chứa toàn bộ giao diện và thuật toán giải
+    - Ý tưởng:
+        + Duyệt từng hàng của bàn cờ bằng BFS
+        + Mỗi bước đặt thêm một con hậu
+        + Lưu trạng thái bàn cờ và vị trí các quân hậu vào queue
+        + Tìm đến khi gặp trạng thái khớp với bàn cờ mẫu
   </textarea>
+
 </body>
 </html>
