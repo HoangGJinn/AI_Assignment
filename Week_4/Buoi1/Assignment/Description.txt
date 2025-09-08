@@ -1,0 +1,11 @@
+- Trò chơi mô phỏng cách đặt 8 quân hậu sao cho giống với bàn cờ được cho sẵn
+- sử dụng các như viện:
+	+ tkinter để tạo GUI
+	+ queue để sử dụng thuật toán bfs thay vì backtracking (đệ quy)
+	+ collections để sử dequeue (triển khai thành stack)
+	+ heapq để sử triển khai priorityqueue
+- Gồm 2 file:
+	+ twelve_queen_solutions.py: chứa mẫu của 12 bàn cờ thỏa điều kiện dưới dạng ma trận
+	+ ChessGame_Full.py: đây là code full gồm GUI và thuật toán của bài toán
+- Ý tưởng sử dụng bfs để duyệt từng hàng của bàn cờ, đặt từ con hậu thứ 1 -> 8, lưu lại từng trạng thái và bước đi của con hậu vào 1 queue
+- Tương tự cải tiến để áp dụng thuật toán DFS và UCS (uniform-cost search)
