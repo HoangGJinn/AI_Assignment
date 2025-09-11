@@ -120,7 +120,7 @@ def bfs_trace(x):
     q = Queue()
     empty_board = [[0 for _ in range(N)] for _ in range(N)]
     q.put((empty_board, 0, []))
-    while q:
+    while not q.empty():
         board, row, path = q.get()
         if row == N:
             if is_valid_solution(board, x):
