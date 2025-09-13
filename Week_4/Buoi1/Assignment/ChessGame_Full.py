@@ -176,8 +176,76 @@ def ucs_trace(x):
                 heapq.heappush(pq, (new_cost, row + 1, next(tie), new_board, new_path))
     return [], 0
 
+#depth-limited search
+def dls_trace(board, row, path, limit, x):
+    if row == N:
+        if is_valid_solution(board, x):
+            return path
+        else:
+            return "failure"
+    elif limit == 0:
+        return "cutoff"
+    else:
+        cutoff_occcurred = False
+        for col in range(N):
+            if isValid(board, row, col):
+                new_board = copy.deepcopy(board)
+                new_board[row][col] = 1
+                new_path = path + [(row, col)]
+                result = dls_trace(new_board, row+1, new_path, limit-1, x)
+                if result == "cutoff":
+                    cutoff_occcurred = True
+                elif result != "failure":
+                    return result
+        return "cutoff" if cutoff_occcurred else "failure"
+    
+#iterative deeping search base on dls
+def ids_trace_dls(x):
+    for lim in range(0,N+1):
+        empty_board = [[0 for _ in range(8)] for _ in range(8)]
+        result = dls_trace(empty_board, 0, [], lim, x)
+        if result != "cutoff" and result != "failure":
+            return result, lim
+
+def dfs_with_limit(x, limit):
+    q = deque()
+    empty_board = [[0 for _ in range(N)] for _ in range(N)]
+    q.append((empty_board, 0, [], limit))
+    cutoff_occurred = False
+
+    while q:
+        board, row, path, lim = q.pop()
+
+        if row == N:
+            if is_valid_solution(board, x):
+                return path
+            else:
+                continue
+        elif lim == 0:
+            cutoff_occurred = True
+            continue
+
+        for col in range(N):
+            if isValid(board, row, col):
+                new_board = copy.deepcopy(board)
+                new_board[row][col] = 1
+                new_path = path + [(row, col)]
+                q.append((new_board, row + 1, new_path, lim-1))
+                
+    if cutoff_occurred:
+        return "cutoff"
+    else:
+        return "failure"
+    
+def ids_trace_dfs_with_limit(x):
+    for lim in range(0, N+1):
+        result = dfs_with_limit(x, lim)
+        if result != "cutoff" and result != "failure":
+            return result, lim
+ 
+
 def animate_path(type):
-    '''Nhận vào lựa chọn là bfs, dfs, hay ucs'''
+    '''Nhận vào lựa chọn là bfs, dfs, ucs, dls, ids,..'''
     x = int(solution_spinbox.get()) - 1
     total_cost = None
 
@@ -185,6 +253,13 @@ def animate_path(type):
         path = bfs_trace(x)
     elif type == "dfs":
         path = dfs_trace(x)
+    elif type == "dls":
+        empty_board = [[0 for _ in range(8)] for _ in range(8)]
+        path = dls_trace(empty_board, 0, [], 8, x)
+    elif type == "ids_dls":
+        path, limit = ids_trace_dls(x)
+    elif type == "ids_dfs":
+        path, limit = ids_trace_dfs_with_limit(x)
     else:  # ucs
         path, total_cost = ucs_trace(x)
 
@@ -193,6 +268,9 @@ def animate_path(type):
             # Khi xong, nếu có tổng chi phí (UCS) thì báo thêm
             if total_cost is not None:
                 step_label.config(text=step_label.cget("text") + f" | Tổng chi phí: {total_cost}")
+            
+            if type == "ids_dls" or type == "ids_dfs":
+                step_label.config(text=step_label.cget("text") + f" Tại limit: {limit}")
             return
         draw_Board(canvasLeft)
         draw_queens(canvasLeft, path[:i])
@@ -220,39 +298,50 @@ def clear_boards():
 draw_Board(canvasLeft)
 draw_Board(canvasRight)
 
-
-panel = tk.Frame(right, bg="#ECE7E7")
-panel.pack(pady=8)
-
-tk.Label(panel, text="Chọn bàn cờ mẫu:", font=("Segoe", 10), bg="#ECE7E7").pack()
-solution_spinbox = tk.Spinbox(panel, from_=1, to=12, width=5, font=("Segoe", 12), justify="center")
-solution_spinbox.pack(pady=4)
-
 # Tạo frame con để chứa cả nút và thanh scale
-row_controls = tk.Frame(left, bg="#ECE7E7")
-row_controls.pack(pady=8)
+row_controls_left = tk.Frame(left, bg="#ECE7E7")
+row_controls_left.pack(pady=8)
+
+row_controls_right = tk.Frame(right, bg="#ECE7E7")
+row_controls_right.pack(pady=8)
+
+delay_var = tk.IntVar(value=800)
+scale_delay = tk.Scale(row_controls_right, from_=100, to=2000, variable=delay_var,
+                       orient="horizontal", label="Tốc độ (ms)", length=100)
+scale_delay.pack(side="left", padx=5)
+
+clear_button = tk.Button(row_controls_right, text="🗑 Xóa bàn cờ", font=("Segoe", 11), command=clear_boards)
+clear_button.pack(side="left", padx=5)
+
+tk.Label(row_controls_right, text="Chọn bàn cờ mẫu:", font=("Segoe", 10), bg="#ECE7E7").pack()
+solution_spinbox = tk.Spinbox(row_controls_right, from_=1, to=12, width=5, font=("Segoe", 12), justify="center")
+solution_spinbox.pack(side="left", pady=4)
 
 
-run_button1 = tk.Button(row_controls, text="Chạy BFS", font=("Segoe", 11),
+run_button1 = tk.Button(row_controls_left, text="BFS", font=("Segoe", 11),
                         command=lambda: animate_path("bfs"))
 run_button1.pack(side="left", padx=5)
 
-run_button2 = tk.Button(row_controls, text="Chạy DFS", font=("Segoe", 11),
+run_button2 = tk.Button(row_controls_left, text="DFS", font=("Segoe", 11),
                         command=lambda: animate_path("dfs"))
 run_button2.pack(side="left", padx=5)
 
-run_button3 = tk.Button(row_controls, text="Chạy UCS", font=("Segoe", 11),
+run_button3 = tk.Button(row_controls_left, text="UCS", font=("Segoe", 11),
                         command=lambda: animate_path("ucs"))
 run_button3.pack(side="left", padx=5)
 
+run_button4 = tk.Button(row_controls_left, text="DLS", font=("Segoe", 11),
+                        command=lambda: animate_path("dls"))
+run_button4.pack(side="left", padx=5)
 
-delay_var = tk.IntVar(value=800)
-scale_delay = tk.Scale(row_controls, from_=100, to=2000, variable=delay_var,
-                       orient="horizontal", label="Tốc độ (ms)", length=200)
-scale_delay.pack(side="left", padx=5)
+run_button5 = tk.Button(row_controls_left, text="IDS(with DLS)", font=("Segoe", 11),
+                        command=lambda: animate_path("ids_dls"))
+run_button5.pack(side="left", padx=5)
 
-clear_button = tk.Button(row_controls, text="🗑 Xóa bàn cờ", font=("Segoe", 11), command=clear_boards)
-clear_button.pack(side="left", padx=5)
+run_button6 = tk.Button(row_controls_left, text="IDS(with DFS)", font=("Segoe", 11),
+                        command=lambda: animate_path("ids_dfs"))
+run_button6.pack(side="left", padx=5)
+
 
 
 def update_right_board():
