@@ -21,7 +21,7 @@ from twelve_queen_solutions import list_solutions
 N = 8
 LIGHT = "#f0d9b5"
 DARK = "#b58863"
-SQ = 60
+SQ = 50
 board_size = N * SQ
 margin = 20
 W = board_size + margin * 2
@@ -32,16 +32,17 @@ after_id = None
 root.title("8 Queens")
 
 # ===== GUI setup =====
-left = tk.Frame(root, bg="#ECE7E7", width=W, height=H + 200)
-right = tk.Frame(root, bg="#ECE7E7", width=W, height=H + 200)
-panel_detail = tk.Frame(root, bg="#ECE7E7", width=W, height=H + 200)
+left = tk.Frame(root, bg="#ECE7E7", width=450, height=700)
+right = tk.Frame(root, bg="#ECE7E7", width=450, height=700)
+panel_detail = tk.Frame(root, bg="#ECE7E7", width=450, height=500 + 200)
 left.pack(side="left")
 right.pack(side="left")
-panel_detail.pack(side="right")
+panel_detail.pack(side="left")
 
 left.pack_propagate(False)
 right.pack_propagate(False)
 panel_detail.pack_propagate(False)
+
 
 labelLeft = tk.Label(left, text="Bàn cờ ban đầu", font=("Segoe", 12), bg="#D99090")
 labelRight = tk.Label(right, text="Chọn bàn cờ đích", font=("Segoe", 12), bg="#D99090")
@@ -52,6 +53,7 @@ canvasLeft = tk.Canvas(left, width=W, height=H, bg="lightblue")
 canvasRight = tk.Canvas(right, width=W, height=H, bg="lightblue")
 canvasLeft.pack(pady=10, side="top")
 canvasRight.pack(pady=10, side="top")
+
 
 # ==== STEP ====
 step_label = tk.Label(
@@ -72,8 +74,8 @@ step_label.pack(side="top", fill="x", padx=10, pady=(0, 8))
 log_label = tk.Label(panel_detail, text="Log đặt quân", font=("Segoe", 12, "bold"), bg="#ECE7E7")
 log_label.pack(anchor="w", padx=10, pady=(10, 4))
 
-log_box = tk.Listbox(panel_detail, font=("Consolas", 11), height=10, width=40)
-log_box.pack(fill="both", expand=True, padx=10, pady=(0, 10))
+log_box = tk.Listbox(panel_detail, font=("Consolas", 11), height=25, width=50)
+log_box.pack(fill="both", expand=True, padx=2, pady=(0, 10))
 
 
 def draw_Board(canvas):
@@ -105,7 +107,7 @@ def draw_Board(canvas):
 
 def draw_queens(canvas, positions, symbol="♛"):
     canvas.delete("queen")
-    font = ("Segoe UI Symbol", 42)
+    font = ("Segoe UI Symbol", 35)
     x0, y0 = margin, margin
     for (r, c) in positions:
         xc = x0 + c * SQ + SQ / 2
@@ -199,7 +201,7 @@ def animate_path(type):
     if type == "genetic" and evo_log and 'log_box' in globals():
         log_box.insert(tk.END, "== GENETIC: tiến trình (mỗi ~10 thế hệ) ==")
         for g, fit, conf, match in evo_log:
-            log_box.insert(tk.END, f"Gen {g}: best_fit={fit:.2f} | conflicts={conf} | match={match}/8")
+            log_box.insert(tk.END, f"Gen {g}: best_fit={fit:.2f} | cost={conf} | match={match}/8")
         log_box.yview_moveto(1.0)
 
     # ======= ANIMATE ĐẶT QUÂN =======
@@ -314,7 +316,7 @@ buttons = [
 ]
 
 for idx, (label, alg) in enumerate(buttons):
-    r, c = divmod(idx, 5)
+    r, c = divmod(idx, 4)
     btn = tk.Button(
         row_controls_left,
         text=label,
