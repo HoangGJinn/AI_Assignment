@@ -9,3 +9,6 @@ Các nguồn tham khảo:
 - Week 4: Dựa trên cơ sở BFS của week 3 để phát triển thêm các thuật toán DFS, UCS, DLS và IDS tham khảo tài liệu từ slide bài giảng chương 5, hoàn thành
 các thuật toán thuộc nhóm tìm kiếm blind search.
 - Week 5: Thêm các thuật toán tìm kiếm có thông tin như Greedy và A*, tham khảo từ slide bài giảng. Ngoài ra còn thêm các thuật toán thuộc nhóm Local Search
+---
+**Cách chạy:**
+- Đa số các thư viện được sử dụng là có sẵn của python, **chỉ cần cài thêm tkinter!**
