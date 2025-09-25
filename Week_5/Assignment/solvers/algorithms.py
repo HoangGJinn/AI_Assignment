@@ -325,7 +325,7 @@ def simulated_annealing_trace(x, T0=100, alpha=0.95, Tmin=1e-3, restarts=300):
             h_new = heuristic_cost(new_board)
             delta = h_old - h_new
 
-            if delta > 0:
+            if delta >= 0:
                 prob, accept = 1.0, True
             else:
                 prob = math.exp(delta / T)
@@ -385,7 +385,7 @@ def _roulette_select(pop, fits):
 
 def _reproduce(x, y):
     n = len(x)
-    c = random.randint(1, n-1)    # single-point crossover
+    c = random.randint(1, n-1)
     return x[:c] + y[c:]
 
 def _mutate(child, p=0.08):
@@ -423,7 +423,7 @@ def genetic_trace(x, pop_size=60, mutation_rate=0.08, max_gens=2000, keep_log=Tr
             bb = _cols_to_board(best_ind)
             evo_log.append((gen, best_fit, heuristic_cost(bb), _matches_to_target(best_ind, target)))
 
-        # nghiệm đúng hẳn
+
         if is_valid_solution(_cols_to_board(best_ind), x):
             if keep_log:
                 bb = _cols_to_board(best_ind)
@@ -431,7 +431,7 @@ def genetic_trace(x, pop_size=60, mutation_rate=0.08, max_gens=2000, keep_log=Tr
             path = [(r, c) for r, c in enumerate(best_ind)]
             return path, gen, True, evo_log
 
-        # tạo thế hệ mới (đúng theo mã giả)
+
         new_population = []
         for _ in range(pop_size):
             xp = _roulette_select(population, fits)
