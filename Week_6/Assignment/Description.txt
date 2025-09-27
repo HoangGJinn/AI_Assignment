@@ -1,0 +1,14 @@
+- Trò chơi mô phỏng cách đặt 8 quân hậu sao cho giống với bàn cờ được cho sẵn.
+- Sử dụng các thư viện:
+    + tkinter để tạo GUI
+    + queue để triển khai BFS
+    + collections để triển khai DFS bằng stack (deque)
+    + heapq để triển khai priority queue (UCS, A*, Greedy, Beam)
+    + itertools, random, math để hỗ trợ các thuật toán nâng cao (Hill Climbing, Simulated Annealing, Genetic)
+- Gồm 3 file:
+    + twelve_queen_solutions.py: chứa mẫu của 12 bàn cờ thỏa điều kiện dưới dạng ma trận.
+    + npqueens.py: chứa toàn bộ các thuật toán giải N-Queens (BFS, DFS, UCS, IDS, DLS, Greedy, A*, Hill Climbing, Simulated Annealing, Genetic, Beam Search).
+    + run_game.py: code chính để chạy GUI, import các hàm trong npqueens.py và cho phép người dùng chọn thuật toán để trực quan hóa.
+- Ý tưởng: sử dụng BFS để duyệt từng hàng của bàn cờ, đặt từ quân hậu thứ 1 → 8, lưu lại từng trạng thái và bước đi vào queue. 
+- Tương tự cải tiến để áp dụng các thuật toán DFS, UCS, IDS, A*, Hill Climbing, Simulated Annealing, Genetic, Beam Search để tìm nghiệm khớp với bàn cờ mục tiêu.
+- Thêm vào 2 thuật toán đặc biệt là tìm kiếm trong môi trường không xác định với and or seach và tìm kiếm trong môi trường không tìm thấy với Belief-state-search
