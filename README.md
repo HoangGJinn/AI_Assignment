@@ -24,7 +24,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 - **Hành động (Action):** Đặt một hậu vào một ô hợp lệ ở hàng hiện tại.
 - **Môi trường (Environment):** Tập hợp tất cả các trạng thái có thể đạt được từ trạng thái ban đầu bằng cách áp dụng các hành động thỏa ràng buộc.
 - **Ràng buộc:** Không có 2 hậu nào cùng hàng, cùng cột, hoặc cùng đường chéo.
-- **Trạng thái đích (Goal):** Đặt đủ 8 hậu thoả ràng buộc.
+- **Trạng thái đích (Goal):** Đặt đủ 8 hậu thoả ràng buộc và **phải thỏa bàn cờ đích** (là bàn cờ bên phải).
 - **Chi phí (Step Cost):** Chi phí để thực hiện một hành động.
 
 ---
