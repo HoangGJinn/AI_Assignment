@@ -4,8 +4,8 @@
 
 ## Đề tài: Giải bài toán **8-Queens (8 quân hậu)** bằng các thuật toán tìm kiếm
 
-Giảng viên hướng dẫn: **TS Phan Thị Huyền Trang**
-Sinh viên thực hiện: **Nguyễn Hoàng Giáp – 23110096**
+Giảng viên hướng dẫn: **TS Phan Thị Huyền Trang**  
+Sinh viên thực hiện: **Nguyễn Hoàng Giáp – 23110096**  
 Ngày báo cáo: *Tháng 10 năm 2025 (Học Kì I)*
 
 ---
