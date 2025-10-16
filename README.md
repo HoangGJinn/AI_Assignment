@@ -116,7 +116,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Dễ kẹt ở cực trị cục bộ.
 
 <p align="center">
-  <img src="Individual_Project/image/Greedy8.gif" alt="Greedy" width="500">
+  <img src="Individual_Project/image/greedy8.gif" alt="Greedy" width="500">
   <br><em>Hình minh họa thuật toán Greedy</em>
 </p>
 
@@ -345,3 +345,4 @@ ASSIGNMENT/
 ## 7. Liên kết GitHub
 
 https://github.com/HoangGJinn/AI_Assignment/tree/main
+
