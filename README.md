@@ -59,7 +59,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Tiêu tốn bộ nhớ lớn.
 
 <p align="center">
-  <img src="Individual_Project/image/bfs8.gif" alt="BFS" width="500">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/bfs8.gif" alt="BFS" width="500">
   <br><em>Hình minh họa thuật toán BFS</em>
 </p>
 
@@ -71,7 +71,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Dễ rơi vào vòng lặp, không đảm bảo tối ưu.
 
 <p align="center">
-  <img src="Individual_Project/image/dfs8.gif" alt="DFS" width="500">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/dfs8.gif" alt="DFS" width="500">
   <br><em>Hình minh họa thuật toán DFS</em>
 </p>
 
@@ -83,12 +83,17 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Phải lặp lại nhiều lần các tầng nông.
 
 <p align="center">
-  <img src="Individual_Project/image/ids8.gif" alt="IDS" width="500">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image//dls8.gif" alt="DLS" width="500">
+  <br><em>Hình minh họa thuật toán DLS</em>
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image//ids8.gif" alt="IDS" width="500">
   <br><em>Hình minh họa thuật toán IDS</em>
 </p>
 
 <p align="center">
-  <img src="Individual_Project/image/uninformed_compare.png" alt="uninformed_compare" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/uninformed_compare.png" alt="uninformed_compare" width="600">
   <br><em>Biểu đồ so sánh hiệu suất nhóm Uninformed</em>
 </p>
 
@@ -105,7 +110,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Chậm khi nhiều đường có chi phí tương tự.
 
 <p align="center">
-  <img src="Individual_Project/image/ucs8.gif" alt="UCS" width="500">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/ucs8.gif" alt="UCS" width="500">
   <br><em>Hình minh họa thuật toán UCS</em>
 </p>
 
@@ -116,7 +121,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Dễ kẹt ở cực trị cục bộ.
 
 <p align="center">
-  <img src="Individual_Project/image/greedy8.gif" alt="Greedy" width="500">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image//greedy8.gif" alt="Greedy" width="500">
   <br><em>Hình minh họa thuật toán Greedy</em>
 </p>
 
@@ -127,12 +132,12 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Tốn nhiều bộ nhớ.
 
 <p align="center">
-  <img src="Individual_Project/image/AStart8.gif" alt="A*" width="500">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/AStart8.gif" alt="A*" width="500">
   <br><em>Hình minh họa thuật toán A*</em>
 </p>
 
 <p align="center">
-  <img src="Individual_Project/image/informed_compare.png" alt="informed_compare" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/informed_compare.png" alt="informed_compare" width="600">
   <br><em>Biểu đồ so sánh hiệu suất nhóm Informed</em>
 </p>
 
@@ -149,7 +154,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Dễ kẹt cực trị cục bộ.
 
 <p align="center">
-  <img src="Individual_Project/image/hb8.gif" alt="Hill Climbing" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/hb8.gif" alt="Hill Climbing" width="600">
   <br><em>Hình minh họa thuật toán Hill Climbing</em>
 </p>
 
@@ -160,8 +165,28 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Phụ thuộc hàm giảm nhiệt độ.
 
 <p align="center">
-  <img src="Individual_Project/image/sa8.gif" alt="SA" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/sa8.gif" alt="SA" width="600">
   <br><em>Hình minh họa thuật toán Simulated Annealing</em>
+</p>
+
+### **Genetic Algorithm (GA)**
+
+* **Mô tả:** Thuật toán mô phỏng quá trình tiến hóa tự nhiên, biểu diễn lời giải bằng nhiễm sắc thể (mỗi cá thể là một cách đặt 8 hậu). Các bước gồm:
+
+- Khởi tạo quần thể ban đầu (tập các lời giải ngẫu nhiên).
+
+- Đánh giá độ thích nghi (fitness): dựa trên số cặp hậu không tấn công nhau.
+
+- Chọn lọc – Lai ghép – Đột biến: sinh ra thế hệ mới có khả năng tốt hơn.
+
+- Lặp lại cho đến khi đạt lời giải tối ưu hoặc hết số thế hệ.
+
+* **Ưu điểm:** Tìm kiếm toàn cục, tránh kẹt ở cực trị địa phương.
+
+* **Nhược điểm:** Cần thiết kế hàm fitness và tham số (tỷ lệ lai, đột biến) phù hợp.
+
+<p align="center"> 
+    <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/ge8.gif" alt="Genetic Algorithm" width="600"> <br><em>Hình minh họa thuật toán Genetic Algorithm</em> 
 </p>
 
 #### **Beam Search**
@@ -171,12 +196,12 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Hiệu quả phụ thuộc K.
 
 <p align="center">
-  <img src="Individual_Project/image/beam8.gif" alt="Beam Search" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/beam8.gif" alt="Beam Search" width="600">
   <br><em>Hình minh họa thuật toán Beam Search</em>
 </p>
 
 <p align="center">
-  <img src="Individual_Project/image/local_compare.png" alt="local_compare" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/local_compare.png" alt="local_compare" width="600">
   <br><em>Biểu đồ so sánh hiệu suất nhóm Local</em>
 </p>
 
@@ -193,7 +218,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Dễ bùng nổ tổ hợp.
 
 <p align="center">
-  <img src="Individual_Project/image/backtrack8.gif" alt="Backtracking" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/backtrack8.gif" alt="Backtracking" width="600">
   <br><em>Hình minh họa thuật toán Backtracking</em>
 </p>
 
@@ -205,7 +230,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 
 
 <p align="center">
-  <img src="Individual_Project/image/fb8.gif" alt="Forward tracking img" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/fb8.gif" alt="Forward tracking img" width="600">
   <br><em>Hình minh họa thuật toán Forward Checking</em>
 </p>
 
@@ -216,12 +241,12 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Tốn kém khi nhiều biến.
 
 <p align="center">
-  <img src="Individual_Project/image/ac3_8.gif" alt="AC3" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/ac3_8.gif" alt="AC3" width="600">
   <br><em>Hình minh họa thuật toán AC3</em>
 </p>
 
 <p align="center">
-  <img src="Individual_Project/image/backtracking_compare.png" alt="backtrack_compare" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/backtracking_compare.png" alt="backtrack_compare" width="600">
   <br><em>Biểu đồ so sánh hiệu suất nhóm CSP</em>
 </p>
 
@@ -238,7 +263,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Cây kế hoạch phức tạp.
 
 <p align="center">
-  <img src="Individual_Project/image/and_or_8.gif" alt="And or img" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/and_or_8.gif" alt="And or img" width="600">
   <br><em>Hình minh họa thuật toán And Or Search</em>
 </p>
 
@@ -249,7 +274,7 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Không gian belief lớn.
 
 <p align="center">
-  <img src="Individual_Project/image/belief8.gif" alt="belief-state search img" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/belief8.gif" alt="belief-state search img" width="600">
   <br><em>Hình minh họa thuật toán Belief-State Search</em>
 </p>
 
@@ -260,12 +285,12 @@ Mục tiêu của dự án là xây dựng một **ứng dụng mô phỏng tr�
 * **Nhược điểm:** Phụ thuộc độ chính xác cảm biến.
 
 <p align="center">
-  <img src="Individual_Project/image/PO8.gif" alt="PO Search" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/PO8.gif" alt="PO Search" width="600">
   <br><em>Hình minh họa thuật toán Partial Observation Search</em>
 </p>
 
 <p align="center">
-  <img src="Individual_Project/image/nondeterministic_compare.png" alt="complex_eviroment_compare" width="600">
+  <img src="https://raw.githubusercontent.com/HoangGJinn/AI_Assignment/main/Individual_Project/image/nondeterministic_compare.png" alt="complex_eviroment_compare" width="600">
   <br><em>Biểu đồ so sánh hiệu suất nhóm Complex Environment</em>
 </p>
 
